@@ -1,0 +1,138 @@
+<html>
+    <head>
+        <title>
+            <%= title  %>
+        </title>
+
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/noty/3.1.4/noty.min.css">
+
+        <style>
+
+            /* Layout style */
+            body {
+                margin: 0px;
+                padding: 0px;
+            }
+            body #layout-main {
+                height: 85%;
+            }
+
+            /* Home style */
+            #home-container {
+                display: flex;
+                justify-content: space-between;
+            }
+            #home-container #feed-posts {
+                width: 70%;
+                padding: 10px;
+            }
+            #home-container #user-friends {
+                width: 30%;
+                padding: 10px;
+                border-left: 1px solid lightgrey;
+                height: 100%;
+            }
+
+            /* Header style */
+            #layout-header nav {
+                display: flex;
+                justify-content: space-between;
+                padding: 0 10px;
+                line-height: 30px;
+                background: #2196f3;
+                color: white;
+                box-shadow: 1px 1px 1px 1px lightgrey;
+            }
+            #layout-header nav .mini-logo p {
+                margin: 20% 5px;
+                font-size: 1.5rem;
+                font-weight: bold;
+            }
+            #layout-header nav .auth-links ul {
+                margin: 5% 5px;
+                display: flex;
+            }
+            #layout-header nav .auth-links ul li {
+                margin-right: 10px;
+                list-style-type: none;
+                background-color: gray;
+                border-radius: 5px;
+                padding: 5px 10px;
+            }
+            #layout-header nav a {
+                color: white;
+                text-decoration: none;
+            }
+
+            /* User Profile style */
+            body {
+                background-color: lightblue;
+            }
+
+            /* Footer style */
+            #layout-footer {
+                color: white;
+                background: grey;
+                padding: 5px 10px;
+                display: flex;
+                justify-content: flex-start;
+            }
+            #layout-footer ul{
+                display: flex;
+            }
+            #layout-footer a {
+                margin: 0px 10px;
+                color: white;
+                text-decoration: none;
+            }
+            #layout-footer .footer-nav ul {
+                list-style: none;
+            }
+
+        </style>
+        
+    </head>
+
+    <body>
+        <%- include('_header'); %>
+
+        <!-- <% if(flash.success && flash.success.length > 0){ %>
+            <h5>
+                <%= flash.success %>
+            </h5>
+        <% } %> -->
+        
+        <main id="layout-main">
+            <%- body %>
+
+        </main>
+
+
+        <%- include('_footer'); %>
+
+        <%- script %>
+
+        <script>
+            <% if(flash.success && flash.success.length > 0){ %>
+                new Noty({
+                    theme: 'relax',
+                    text: '<%= flash.success %>',
+                    type: 'success',
+                    layout: 'topRight',
+                    timeout: 1500
+                }).show();
+            <% } %>
+
+            <% if(flash.error && flash.error.length > 0){ %>
+                new Noty({
+                    theme: 'relax',
+                    text: '<%= flash.error %>',
+                    type: 'error',
+                    layout: 'topRight',
+                    timeout: 1500
+                }).show();
+            <% } %>
+        </script>
+        
+    </body>
+</html>
