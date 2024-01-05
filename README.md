@@ -2,6 +2,10 @@
 
 Codeial is a lightweight social media web application for coders built using Node.js, Express, and MongoDB. It provides basic features for user authentication, publishing, deleting posts and comments, and editing profile information. This project serves as a simple demonstration of these functionalities.
 
+## Screenshot
+
+![Codeial - Homepage Screenshot](https://github.com/krishnashah122/Codeial/assets/64410232/91236469-b9db-4aa2-8b6e-4c8587372961)
+
 ## Features
 
 - **User Authentication:** Users can register, log in, and log out. Passwords are securely hashed before storage.
